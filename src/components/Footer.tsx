@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Phone, Mail, MapPin, Facebook, Instagram, Twitter } from 'lucide-react';
@@ -9,7 +8,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-bold mb-4">İnşaat Pro</h3>
+            <h3 className="text-2xl font-bold mb-4">Taş Yapı</h3>
             <p className="text-gray-300 mb-4">
               Güvenilir inşaat çözümleri ile hayalinizdeki yapıyı gerçeğe dönüştürüyoruz.
             </p>
@@ -60,7 +59,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-300">
-          <p>&copy; 2024 İnşaat Pro. Tüm hakları saklıdır.</p>
+          <p>&copy; 2024 Taş Yapı. Tüm hakları saklıdır.</p>
         </div>
       </div>
     </footer>

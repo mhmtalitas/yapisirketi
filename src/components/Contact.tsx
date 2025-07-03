@@ -1,116 +1,114 @@
 
 import React from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Phone, Mail, MapPin, Clock } from 'lucide-react';
 
 const Contact = () => {
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: "Telefon",
+      details: ["0462 234 56 78", "0532 123 45 67"]
+    },
+    {
+      icon: Mail,
+      title: "E-posta",
+      details: ["info@tasyapi.com", "teklif@tasyapi.com"]
+    },
+    {
+      icon: MapPin,
+      title: "Adres",
+      details: ["Atatürk Caddesi No:45/A", "Beşikdüzü / Trabzon"]
+    },
+    {
+      icon: Clock,
+      title: "Çalışma Saatleri",
+      details: ["Pazartesi - Cumartesi: 08:00 - 18:00", "Pazar: Kapalı"]
+    }
+  ];
+
   return (
     <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-800 mb-4">İletişim</h2>
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">İletişim</h2>
+          <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
           <p className="text-xl text-gray-600">
             Projeniz için ücretsiz keşif ve teklif alın
           </p>
         </div>
         
-        <div className="grid lg:grid-cols-2 gap-12">
-          <div>
-            <h3 className="text-2xl font-bold text-gray-800 mb-6">İletişim Bilgileri</h3>
-            
-            <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <Phone className="w-6 h-6 text-blue-600 mt-1" />
-                <div>
-                  <h4 className="font-semibold text-gray-800">Telefon</h4>
-                  <p className="text-gray-600">0462 234 56 78</p>
-                  <p className="text-gray-600">0532 123 45 67</p>
+        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          {contactInfo.map((info, index) => (
+            <Card key={index} className="text-center p-8 border-0 shadow-lg hover:shadow-xl transition-shadow">
+              <CardContent className="pt-6">
+                <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <info.icon className="w-8 h-8 text-blue-600" />
                 </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <Mail className="w-6 h-6 text-blue-600 mt-1" />
-                <div>
-                  <h4 className="font-semibold text-gray-800">E-posta</h4>
-                  <p className="text-gray-600">info@insaatpro.com</p>
-                  <p className="text-gray-600">teklif@insaatpro.com</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{info.title}</h3>
+                <div className="space-y-1">
+                  {info.details.map((detail, idx) => (
+                    <p key={idx} className="text-gray-600">{detail}</p>
+                  ))}
                 </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <MapPin className="w-6 h-6 text-blue-600 mt-1" />
-                <div>
-                  <h4 className="font-semibold text-gray-800">Adres</h4>
-                  <p className="text-gray-600">
-                    Atatürk Caddesi No:45/A<br />
-                    Beşikdüzü / Trabzon
-                  </p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-4">
-                <Clock className="w-6 h-6 text-blue-600 mt-1" />
-                <div>
-                  <h4 className="font-semibold text-gray-800">Çalışma Saatleri</h4>
-                  <p className="text-gray-600">Pazartesi - Cumartesi: 08:00 - 18:00</p>
-                  <p className="text-gray-600">Pazar: Kapalı</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <Card>
-            <CardHeader>
-              <CardTitle>Teklif Formu</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <form className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="name">Ad Soyad</Label>
-                    <Input id="name" placeholder="Adınız Soyadınız" />
-                  </div>
-                  <div>
-                    <Label htmlFor="phone">Telefon</Label>
-                    <Input id="phone" placeholder="0532 123 45 67" />
-                  </div>
-                </div>
-                
-                <div>
-                  <Label htmlFor="email">E-posta</Label>
-                  <Input id="email" type="email" placeholder="email@example.com" />
-                </div>
-                
-                <div>
-                  <Label htmlFor="project">Proje Türü</Label>
-                  <select id="project" className="w-full px-3 py-2 border border-gray-300 rounded-md">
-                    <option>Seçiniz...</option>
-                    <option>Bina İnşaatı</option>
-                    <option>Villa İnşaatı</option>
-                    <option>Tadilat</option>
-                    <option>Onarım</option>
-                    <option>Diğer</option>
-                  </select>
-                </div>
-                
-                <div>
-                  <Label htmlFor="message">Mesaj</Label>
-                  <textarea 
-                    id="message" 
-                    rows={4} 
-                    className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                    placeholder="Proje detaylarınızı yazın..."
-                  ></textarea>
-                </div>
-                
-                <Button className="w-full">Teklif Gönder</Button>
-              </form>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+          ))}
         </div>
+        
+        <Card className="max-w-2xl mx-auto border-0 shadow-xl">
+          <CardContent className="p-8">
+            <div className="text-center mb-8">
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Teklif Formu</h3>
+              <p className="text-gray-600">Size en kısa sürede dönüş yapalım</p>
+            </div>
+            
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <Label htmlFor="name" className="text-gray-700 font-medium">Ad Soyad</Label>
+                  <Input id="name" placeholder="Adınız Soyadınız" className="mt-2" />
+                </div>
+                <div>
+                  <Label htmlFor="phone" className="text-gray-700 font-medium">Telefon</Label>
+                  <Input id="phone" placeholder="0532 123 45 67" className="mt-2" />
+                </div>
+              </div>
+              
+              <div>
+                <Label htmlFor="email" className="text-gray-700 font-medium">E-posta</Label>
+                <Input id="email" type="email" placeholder="email@example.com" className="mt-2" />
+              </div>
+              
+              <div>
+                <Label htmlFor="project" className="text-gray-700 font-medium">Proje Türü</Label>
+                <select id="project" className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                  <option>Seçiniz...</option>
+                  <option>Bina İnşaatı</option>
+                  <option>Villa İnşaatı</option>
+                  <option>Tadilat</option>
+                  <option>Onarım</option>
+                  <option>Diğer</option>
+                </select>
+              </div>
+              
+              <div>
+                <Label htmlFor="message" className="text-gray-700 font-medium">Mesaj</Label>
+                <textarea 
+                  id="message" 
+                  rows={4} 
+                  className="w-full mt-2 px-4 py-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  placeholder="Proje detaylarınızı yazın..."
+                ></textarea>
+              </div>
+              
+              <Button className="w-full py-3 text-lg">Teklif Gönder</Button>
+            </form>
+          </CardContent>
+        </Card>
       </div>
     </section>
   );
