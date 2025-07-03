@@ -26,8 +26,8 @@ const Contact = () => {
                 <Phone className="w-6 h-6 text-blue-600 mt-1" />
                 <div>
                   <h4 className="font-semibold text-gray-800">Telefon</h4>
+                  <p className="text-gray-600">0462 234 56 78</p>
                   <p className="text-gray-600">0532 123 45 67</p>
-                  <p className="text-gray-600">0212 456 78 90</p>
                 </div>
               </div>
               
@@ -45,8 +45,8 @@ const Contact = () => {
                 <div>
                   <h4 className="font-semibold text-gray-800">Adres</h4>
                   <p className="text-gray-600">
-                    Merkez Mahallesi, İnşaat Caddesi No:123<br />
-                    Şişli / İstanbul
+                    Atatürk Caddesi No:45/A<br />
+                    Beşikdüzü / Trabzon
                   </p>
                 </div>
               </div>

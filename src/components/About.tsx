@@ -18,14 +18,15 @@ const About = () => {
           <div>
             <h2 className="text-4xl font-bold text-gray-800 mb-6">Hakkımızda</h2>
             <p className="text-lg text-gray-600 mb-6">
-              2004 yılından bu yana inşaat sektöründe hizmet veren firmamız, 
+              2004 yılından bu yana Trabzon Beşikdüzü'nde inşaat sektöründe hizmet veren firmamız, 
               kaliteli işçilik ve güvenilir hizmet anlayışıyla müşterilerine 
               değer katmaya devam ediyor.
             </p>
             <p className="text-lg text-gray-600 mb-8">
               Deneyimli ekibimiz ve modern teknoloji kullanarak, her projede 
               mükemmellik standartlarını yakalıyor ve müşteri memnuniyetini 
-              en üst seviyede tutuyoruz.
+              en üst seviyede tutuyoruz. Karadeniz Bölgesi'nde güvenilir 
+              inşaat hizmetleri sunmaktayız.
             </p>
             
             <div className="grid grid-cols-2 gap-6">

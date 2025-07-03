@@ -26,7 +26,7 @@ const Header = () => {
           <div className="hidden md:flex items-center space-x-4">
             <div className="flex items-center space-x-2 text-sm text-gray-600">
               <Phone className="w-4 h-4" />
-              <span>0532 123 45 67</span>
+              <span>0462 234 56 78</span>
             </div>
             <Button>Teklif Al</Button>
           </div>

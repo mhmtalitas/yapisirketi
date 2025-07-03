@@ -13,27 +13,6 @@ const AboutPage = () => {
     { icon: MapPin, value: "10", label: "Şehir" }
   ];
 
-  const team = [
-    {
-      name: "Murat Yılmaz",
-      position: "Genel Müdür",
-      experience: "25 yıl deneyim",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-    },
-    {
-      name: "Ahmet Kaya",
-      position: "Proje Müdürü",
-      experience: "18 yıl deneyim",
-      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-    },
-    {
-      name: "Fatma Demir",
-      position: "Mimari Tasarım Uzmanı",
-      experience: "12 yıl deneyim",
-      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80"
-    }
-  ];
-
   return (
     <div className="min-h-screen">
       <Header />
@@ -44,7 +23,7 @@ const AboutPage = () => {
           <div className="text-center">
             <h1 className="text-4xl lg:text-6xl font-bold mb-6">Hakkımızda</h1>
             <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-              2004 yılından bu yana inşaat sektöründe güvenilir hizmet veren, 
+              2004 yılından bu yana Trabzon Beşikdüzü'nde inşaat sektöründe güvenilir hizmet veren, 
               kaliteli işçilik anlayışıyla öne çıkan bir firmayız
             </p>
           </div>
@@ -58,18 +37,19 @@ const AboutPage = () => {
             <div>
               <h2 className="text-4xl font-bold text-gray-800 mb-6">Hikayemiz</h2>
               <p className="text-lg text-gray-600 mb-6">
-                İnşaat Pro, 2004 yılında küçük bir aile işletmesi olarak başladığı yolculuğunda, 
-                bugün İstanbul'un önde gelen inşaat firmalarından biri haline gelmiştir.
+                İnşaat Pro, 2004 yılında Trabzon Beşikdüzü'nde küçük bir aile işletmesi olarak başladığı yolculuğunda, 
+                bugün Karadeniz Bölgesi'nin önde gelen inşaat firmalarından biri haline gelmiştir.
               </p>
               <p className="text-lg text-gray-600 mb-6">
                 20 yıllık deneyimimiz boyunca 500'den fazla proje tamamladık ve binlerce ailenin 
                 hayallerini gerçeğe dönüştürdük. Kaliteli malzeme kullanımı, zamanında teslimat 
-                ve müşteri memnuniyeti odaklı çalışma prensiplerimizle sektörde güvenilir bir 
+                ve müşteri memnuniyeti odaklı çalışma prensiplerimizle bölgede güvenilir bir 
                 marka olduk.
               </p>
               <p className="text-lg text-gray-600">
                 Deneyimli ekibimiz, modern teknoloji ve geleneksel ustalık bilgisini harmanlayarak 
-                her projede mükemmellik standardını yakalamaya odaklanır.
+                her projede mükemmellik standardını yakalamaya odaklanır. Trabzon ve çevre illerde 
+                kaliteli inşaat hizmetleri sunmaktan gurur duyuyoruz.
               </p>
             </div>
             
@@ -119,7 +99,7 @@ const AboutPage = () => {
                 <h3 className="text-xl font-bold text-gray-800 mb-4">Misyonumuz</h3>
                 <p className="text-gray-600">
                   Kaliteli malzeme, deneyimli işçilik ve güvenilir hizmet anlayışıyla 
-                  müşterilerimizin hayallerini gerçeğe dönüştürmek
+                  Karadeniz Bölgesi'nde müşterilerimizin hayallerini gerçeğe dönüştürmek
                 </p>
               </CardContent>
             </Card>
@@ -130,7 +110,7 @@ const AboutPage = () => {
                 <h3 className="text-xl font-bold text-gray-800 mb-4">Vizyonumuz</h3>
                 <p className="text-gray-600">
                   İnşaat sektöründe örnek alınan, sürdürülebilir ve yenilikçi 
-                  çözümler sunan lider firma olmak
+                  çözümler sunan Karadeniz Bölgesi'nin lider firması olmak
                 </p>
               </CardContent>
             </Card>
@@ -145,35 +125,6 @@ const AboutPage = () => {
                 </p>
               </CardContent>
             </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-800 mb-4">Ekibimiz</h2>
-            <p className="text-xl text-gray-600">
-              Deneyimli ve uzman kadromuzla hizmetinizdeyiz
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            {team.map((member, index) => (
-              <Card key={index} className="text-center overflow-hidden">
-                <img 
-                  src={member.image} 
-                  alt={member.name}
-                  className="w-full h-64 object-cover"
-                />
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-bold text-gray-800 mb-2">{member.name}</h3>
-                  <p className="text-blue-600 font-medium mb-2">{member.position}</p>
-                  <p className="text-gray-600">{member.experience}</p>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </section>
