@@ -1,18 +1,24 @@
-
 import React from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Users, Calendar, Award, MapPin } from 'lucide-react';
+import CountUp from 'react-countup';
+import { useInView } from 'react-intersection-observer';
 
 const About = () => {
   const stats = [
-    { icon: Calendar, value: "20+", label: "Yıl Tecrübe" },
-    { icon: Users, value: "500+", label: "Mutlu Müşteri" },
-    { icon: Award, value: "15", label: "Ödül" },
-    { icon: MapPin, value: "10", label: "Şehir" }
+    { icon: Calendar, value: 20, suffix: "+", label: "Yıl Tecrübe" },
+    { icon: Users, value: 500, suffix: "+", label: "Mutlu Müşteri" },
+    { icon: Award, value: 15, suffix: "", label: "Ödül" },
+    { icon: MapPin, value: 10, suffix: "", label: "Şehir" }
   ];
 
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.1,
+  });
+
   return (
-    <section className="py-20 bg-white">
+    <section ref={ref} className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Hakkımızda</h2>
@@ -29,7 +35,9 @@ const About = () => {
               <div className="w-20 h-20 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-100 transition-colors">
                 <stat.icon className="w-10 h-10 text-blue-600" />
               </div>
-              <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+              <div className="text-3xl font-bold text-gray-900 mb-2">
+                {inView && <CountUp end={stat.value} duration={2.5} suffix={stat.suffix} />}
+              </div>
               <div className="text-gray-600">{stat.label}</div>
             </div>
           ))}
